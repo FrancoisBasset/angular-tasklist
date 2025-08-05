@@ -1,0 +1,9 @@
+<div>
+	<AddTaskButton (click)="formOpened = true"/>
+	@if (formOpened) {
+		<TaskForm (onCancelFormButtonClicked)="formOpened = false" (onCreateButtonClicked)="createTask($event)" />
+	}
+
+	<h1>Liste des tâches</h1>
+	<TaskList [tasks]="tasks" (onRemoveButtonClicked)="removeTask($event)" />
+</div>
