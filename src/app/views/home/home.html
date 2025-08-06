@@ -1,9 +1,15 @@
 <div>
 	<AddTaskButton (click)="formOpened = true"/>
 	@if (formOpened) {
-		<TaskForm (onCancelFormButtonClicked)="formOpened = false" (onCreateButtonClicked)="createTask($event)" />
+		<TaskForm (onCancelFormButtonClicked)="formOpened = false" (onCreateButtonClicked)="taskService.createTask($event)" />
 	}
 
 	<h1>Liste des tâches</h1>
-	<TaskList [tasks]="tasks" (onRemoveButtonClicked)="removeTask($event)" />
+	<TaskList [tasks]="taskService.tasks" (onRemoveButtonClicked)="taskService.removeTask($event)" />
+
+	<button (click)="increment()">Incrementer </button>
+	<label>{{nombre()}}</label>
+	{{untest()|uppercase|space}}
+
+	<h1 green>Bonjour</h1>
 </div>
