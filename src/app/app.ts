@@ -7,6 +7,6 @@ import { RouterOutlet } from '@angular/router';
 	template: '<router-outlet />'
 })
 export class App {
-	protected readonly title = signal('pokecrm-angular');
+	protected readonly title = signal('angular-tasklist');
 
 }
